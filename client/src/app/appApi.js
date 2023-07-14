@@ -2,21 +2,22 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 export const appApi = createApi({
   reducerPath: 'appApi', 
-  baseQuery: fetchBaseQuery({baseUrl: 'http://127.0.0.1:5000/'}),
+  baseQuery: fetchBaseQuery({baseUrl: 'http://localhost:5000/api/v1'}),
   
   endpoints: (build) => ({
 
-    endpoint: build.mutation({
-      query: (params) => ({
-        url: `graph`,
-        method: 'POST', 
-        body: params
-      }) 
+    search: build.query({
+        query: searchTerm => ({url: `/guardian/search?searchTerm=${searchTerm}`}),
     }),
-    
+      
+    getItem: build.query({
+        query: id => `/guardian/article?id=${id}`,
+    }),
+
   })
 })
 
 export const { 
-  useCreateGraphMutation,
+  useSearchQuery,
+  useGetItemQuery,
 } = appApi

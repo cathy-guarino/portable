@@ -1,9 +1,8 @@
 const express = require('express');
-
-const search = require('./search');
+const guardian = require('./guardian');
 
 const router = express.Router();
 
-router.use('/search', search);
+router.use('/guardian', guardian);
 
 module.exports = router;

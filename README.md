@@ -1,5 +1,36 @@
 # News App
 
+## Progress Update
+
+This is an implementation of the News Application brief. 
+
+The application has been built with Javascript, React and Redux on the frontend, and Node and Express on the backend.  
+
+### Features Included 
+
+- **Search** - The Guardian content API is queried to bring back article results. Searches are submitted as the user types. 
+- **Result display** - Clicking on a result will display the full article.
+- **Wrapped API** - The server includes a basic wrapping of the Guardian endpoints. 
+- **Result caching** - Duplicate requests to do not result in running multiple identical API requests. 
+
+### Features Not Included
+
+Due to limited time constraints, the following features are not currently included in the application. They have however been considered in the design such that they can be integrated easily. 
+
+- **Results grouping** - The brief suggested that results should be grouped by their section. Currently the section name is displayed with each result, but results are not organised or displayed with others in their section. 
+- **Pinning** - the pinning feature is not included. 
+
+### Limitations
+
+There are a few pieces of functionality that would be typical to expect in an app like this, even though they were not mentioned in the brief. The following items would have been implemented if more time was available: 
+
+- **Results pagination** - The app currently brings back 10 results per search. Future development should integrate support for a pagination mechanism whereby more results can be requested either automatically by the client (eg as an infinite scroll mechanism) or manually by the user (eg through pagination or 'next' buttons).
+- **Routing** - currently this is a single page app with no client side routing. This means that the view history is not recorded in the browser and the browser back button cannot be used. 
+- **Search Debouncing** - It is not efficient to initiate a full search request on every keypress by the user. The search function should implement debouncing so that the search is only submitted when the user pauses briefly.
+- **Robust error handling and testing** -  This is a big one! Due to time constraints error handling and testing has not been included. This would be critical to focus on with any further development. 
+- **Visual design** - Focus has not been put on the visual design of the app. 
+- **Empty states** - For better user experience, messages should be shown when no results are available for a search, along with an easy means to reset the search
+
 ## Intro
 
 This code activity is a way for you to show us your development skills -
